@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/buttonView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/user_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:minWidth="200dp"
+                android:singleLine="true"
+                android:inputType="text"
+                android:text="ABCDEFGHIJKLMNOabcdefghijklmno"
+                android:focusable="true"/>
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Read user ID and version" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Write a new user ID" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Read all history data" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Clear all history" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/readCBP_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="1"
+                android:focusable="true"/>
+
+            <Spinner
+                android:id="@+id/readCBP_Raw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Read CBP data" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/ABPMStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="6"
+                android:focusable="true"/>
+
+            <EditText
+                android:id="@+id/ABPMEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="22"
+                android:focusable="true"/>
+
+            <EditText
+                android:id="@+id/ABPMInt_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="30"
+                android:focusable="true"/>
+
+            <EditText
+                android:id="@+id/ABPMInt_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="60"
+                android:focusable="true"/>
+
+            <EditText
+                android:id="@+id/HI_infPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="0"
+                android:focusable="true"/>
+
+            <Switch
+                android:id="@+id/SW_CBP_zone2_meas_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+            <Switch
+                android:id="@+id/SW_CBP_zone1_meas_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+            <Switch
+                android:id="@+id/SW_SEL_silent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+            <Switch
+                android:id="@+id/SW_checkhide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+
+            <EditText
+                android:id="@+id/CBPInt_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="30"
+                android:focusable="true"/>
+
+            <EditText
+                android:id="@+id/CBPInt_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:inputType="number"
+                android:text="60"
+                android:focusable="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Read ABPM setting values" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Write ABPM setting values" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Read device Time" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Write device Time" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Read BPM function setting value" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Read device ID and info from BPM" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Read BT module name" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"
+                android:layout_weight="1"
+                android:text="Disconnect the Bluetooth" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/LogTextViewStyle"
+        android:layout_marginTop="10dp"/>
+    <ListView
+        android:id="@+id/bpm_list_view"
+        style="@style/MyListStyle"
+        android:transcriptMode="alwaysScroll"/>
+
+</LinearLayout>
