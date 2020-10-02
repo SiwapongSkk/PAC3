@@ -58,9 +58,13 @@ class Login : AppCompatActivity() {
                         textView12.text = "Response: " + obj.getString("user_name_patient")
 
                         val username = obj.getString("user_name_patient")
+                        val passwordpatient = obj.getString("password_patient")
+
 
                         //***///**
                         editor.putString("NAME", username)
+                        editor.putString("password", passwordpatient)
+                        editor.putBoolean("login", true )
 
                         //**---**
                         editor.apply()

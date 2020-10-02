@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
         val buttonp8 = findViewById<Button>(R.id.buttonp8);
         val buttonp9 = findViewById<Button>(R.id.buttonp9);
         val buttonp10 = findViewById<Button>(R.id.buttonp10);
-
+        val buttonp11 = findViewById<Button>(R.id.buttonp11);
+        val buttonp12 = findViewById<Button>(R.id.buttonp12);
 
 
         buttonp2.setOnClickListener{
@@ -80,6 +81,14 @@ class MainActivity : AppCompatActivity() {
         }
         buttonp10.setOnClickListener{
             val intent = Intent(this@MainActivity, MainActivity10::class.java)
+            startActivity(intent)
+        }
+        buttonp11.setOnClickListener{
+            val intent = Intent(this@MainActivity, MainActivity14::class.java)
+            startActivity(intent)
+        }
+        buttonp12.setOnClickListener{
+            val intent = Intent(this@MainActivity, MainActivity15::class.java)
             startActivity(intent)
         }
 
