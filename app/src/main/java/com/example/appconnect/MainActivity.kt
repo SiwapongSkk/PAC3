@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
       pa();
 
+
     }
 
 
@@ -92,6 +93,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
     }
+
+
 
 }

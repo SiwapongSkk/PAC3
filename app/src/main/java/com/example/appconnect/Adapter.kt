@@ -1,4 +1,4 @@
 package com.example.appconnect
 
-class DataModelListView {
+class Adapter  {
 }

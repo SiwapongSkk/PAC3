@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_main12.*
 import kotlinx.android.synthetic.main.activity_main13.*
 import org.json.JSONObject
 
-class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListener,
+public class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListener,
     ThermoProtocol.OnConnectStateListener, ThermoProtocol.OnNotifyStateListener,
     MyBluetoothLE.OnWriteStateListener {
 
@@ -49,6 +49,24 @@ class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListene
 
         initParam()
 
+        button9.setOnClickListener {
+
+
+            Global.thermoProtocol.setOnDataResponseListener(this)
+            Global.thermoProtocol.setOnConnectStateListener(this)
+            Global.thermoProtocol.setOnNotifyStateListener(this)
+            Global.thermoProtocol.setOnWriteStateListener(this)
+
+            //Start scan
+            startScan()
+
+        }
+
+        button10.setOnClickListener {
+            if (Global.thermoProtocol.isConnected) Global.thermoProtocol.disconnect()
+            Global.thermoProtocol.stopScan()
+        }
+
         b()
         //return
     }
@@ -60,7 +78,7 @@ class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListene
         //toolbar.setSubtitle("Body Temperature " + Global.thermoProtocol.getSDKVersion());
 
     }
-
+    /*
     override fun onStart() {
         super.onStart()
         Global.thermoProtocol.setOnDataResponseListener(this)
@@ -72,12 +90,13 @@ class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListene
         startScan()
     }
 
+
     override fun onDestroy() {
         super.onDestroy()
         if (Global.thermoProtocol.isConnected) Global.thermoProtocol.disconnect()
         Global.thermoProtocol.stopScan()
     }
-
+    */
     private fun startScan() {
         if (!Global.thermoProtocol.isSupportBluetooth(this)) {
             return
@@ -85,7 +104,8 @@ class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListene
         textView1!!.text = "start scan"
         Toast.makeText(applicationContext, "start scan", Toast.LENGTH_SHORT).show()
         //logListAdapter.addLog("start scan");
-        Global.thermoProtocol.startScan(10)
+
+        Global.thermoProtocol.startScan(5)
     }
 
     override fun onStop() {
@@ -196,6 +216,7 @@ class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListene
 
                 connect(datathermo!!)
 
+
                 val intent = Intent(this@MainActivity13, MainActivity10::class.java)
                 startActivity(intent)
 
@@ -204,12 +225,6 @@ class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListene
                 Toast.makeText(applicationContext, "No data", Toast.LENGTH_SHORT).show()
             }
 
-            //initParam()
-            /*
-            if (datathermo != null) {
-                connect(datathermo)
-            }
-             */
 
         }
     }
