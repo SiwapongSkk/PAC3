@@ -38,6 +38,7 @@ class MainActivity10 : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val current = LocalDateTime.now()
             val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy. HH:mm:ss")
+            //"dd.MM.yyyy. HH:mm:ss"
             var answer: String =  current.format(formatter)
             Log.d("answer",answer)
             textView17.text = "DATE : $answer"

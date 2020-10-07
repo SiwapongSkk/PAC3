@@ -2,7 +2,9 @@ package com.example.appconnect
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ListView
 import android.widget.TextView
@@ -15,9 +17,14 @@ import com.android.volley.toolbox.Volley
 import com.ideabus.model.bluetooth.MyBluetoothLE
 import com.ideabus.model.data.ThermoMeasureData
 import com.ideabus.model.protocol.ThermoProtocol
+import kotlinx.android.synthetic.main.activity_main10.*
 import kotlinx.android.synthetic.main.activity_main12.*
 import kotlinx.android.synthetic.main.activity_main13.*
 import org.json.JSONObject
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 public class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponseListener,
     ThermoProtocol.OnConnectStateListener, ThermoProtocol.OnNotifyStateListener,
@@ -233,11 +240,35 @@ public class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponse
 
 
     fun connect(dataThermo : Float){
+
         val url = "https://ehr-system-project.herokuapp.com/api/examination"
         val sharedPreferences = getSharedPreferences("User_Info", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putFloat("Thermo", datathermo!!)
         editor.apply()
+
+        /*   set Date  */
+        var answerdate1 : String = "1111"
+        var answertime2 : String = "2222"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val current = LocalDateTime.now()
+            val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy. HH:mm:ss")
+            val formatterdate = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+            val formattertime = DateTimeFormatter.ofPattern("HH:mm:ss")
+
+            //"dd.MM.yyyy. HH:mm:ss"
+            var answer: String =  current.format(formatter)
+            val answerdate: String =  current.format(formatterdate)
+            val answertime: String =  current.format(formattertime)
+            answerdate1 = answerdate
+            answertime2 = answertime
+            //Log.d("answer",answer)
+        } else {
+            var date = Date()
+            val formatter = SimpleDateFormat("MMM dd yyyy HH:mma")
+            val answer: String = formatter.format(date)
+            Log.d("answer",answer)
+        }
 
             val jsonobj1 = JSONObject()
 
@@ -248,6 +279,8 @@ public class MainActivity13 : AppCompatActivity(), ThermoProtocol.OnDataResponse
 
             jsonobj1.put("user_name_patient",nameU)
             jsonobj1.put("body_temperature_patient",body_temperature)
+            jsonobj1.put("date_add",answerdate1)
+            jsonobj1.put("time_add",answertime2)
 
             val que = Volley.newRequestQueue(this)
 

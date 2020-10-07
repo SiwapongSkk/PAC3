@@ -49,7 +49,7 @@ class MainActivity15 : AppCompatActivity() {
                     val description = jsonObj.getString("body_temperature_patient")
                     //val rating = jsonObj.getString("Rating")
                     val category = jsonObj.getString("body_temperature_patient")
-                    val studio = jsonObj.getString("updatedAt")
+                    val studio = jsonObj.getString("date_add")
                     val img = jsonObj.getString("user_name_patient")
 
                     val data = Anime(name,description,category,studio,img)
